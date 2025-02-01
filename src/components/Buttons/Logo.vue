@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { NButton, NPerformantEllipsis } from "naive-ui";
+import { NPerformantEllipsis } from "naive-ui";
 import { useContextStore } from "~/stores/context.ts";
+import RouterButton from "./RouterButton.vue";
 
 defineOptions({
   name: "LogoComponent",
@@ -11,7 +12,7 @@ const context = useContextStore();
 </script>
 
 <template>
-  <NButton quaternary>
+  <RouterButton :to="{ name: 'LandingPage' }" :button-props="{ quaternary: true }">
     <template #icon>
       <img :src="context.logo" class="h-18px w-18px border-none" loading="lazy">
     </template>
@@ -19,5 +20,5 @@ const context = useContextStore();
     <NPerformantEllipsis class="max-w-150px line-height-relaxed">
       {{ context.siteName }}
     </NPerformantEllipsis>
-  </NButton>
+  </RouterButton>
 </template>

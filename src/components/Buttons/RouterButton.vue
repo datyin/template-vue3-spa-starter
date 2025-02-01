@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ButtonProps, IconProps } from "naive-ui";
+import type { AnchorHTMLAttributes } from "vue";
 import type { RouterLinkProps } from "vue-router";
 import { NButton, NIcon } from "naive-ui";
 import { RouterLink } from "vue-router";
@@ -13,7 +14,8 @@ defineProps<{
   to: RouterLinkProps["to"];
   icon?: IconProps["component"];
   iconProps?: Omit<IconProps, "component">;
-  buttonProps?: Omit<ButtonProps, "tag" | "href">;
+  disabled?: ButtonProps["disabled"];
+  buttonProps?: Omit<ButtonProps, "tag" | "disabled"> & Omit<AnchorHTMLAttributes, "href">;
 }>();
 </script>
 
@@ -21,12 +23,15 @@ defineProps<{
   <RouterLink v-slot="{ href, navigate }" :to custom>
     <NButton
       v-bind="buttonProps"
+      :disabled
       tag="a"
       :href="href"
       @click="navigate"
     >
-      <template v-if="icon" #icon>
-        <NIcon :component="icon" v-bind="iconProps" />
+      <template #icon>
+        <slot name="icon">
+          <NIcon v-if="icon" :component="icon" v-bind="iconProps" />
+        </slot>
       </template>
 
       <slot />

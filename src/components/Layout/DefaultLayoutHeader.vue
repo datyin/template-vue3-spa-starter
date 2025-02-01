@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { NFlex, NLayoutHeader } from "naive-ui";
-import ClientSettings from "./ClientSettings.vue";
-import Logo from "./Logo.vue";
+import ClientSettings from "~/components/Buttons/ClientSettings.vue";
+import Logo from "~/components/Buttons/Logo.vue";
 
 defineOptions({
   name: "DefaultLayoutHeaderComponent",
