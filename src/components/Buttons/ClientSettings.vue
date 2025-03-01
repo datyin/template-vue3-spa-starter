@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { DropdownOption } from "naive-ui";
+import { usePreferredColorScheme } from "@vueuse/core";
 import { NButton, NDropdown, NIcon } from "naive-ui";
 import { computed, h } from "vue";
-import { IconColors, IconDarkMode, IconFlagDE, IconFlagEN, IconLightMode, IconSettings, IconTranslate } from "~/icons/index.ts";
+import { IconColors, IconDarkMode, IconFlagDE, IconFlagEN, IconLightMode, IconSettings, IconSystemMode, IconTranslate } from "~/icons/index.ts";
 import { t } from "~/plugins/i18n.ts";
 import { useContextStore } from "~/stores/context.ts";
 
@@ -11,6 +12,7 @@ defineOptions({
   inheritAttrs: false,
 });
 
+const preferredColor = usePreferredColorScheme();
 const context = useContextStore();
 
 const options = computed<DropdownOption[]>(() => ([
@@ -46,6 +48,11 @@ const options = computed<DropdownOption[]>(() => ([
         key: "dark",
         label: t("Dark"),
       },
+      {
+        icon: () => h(NIcon, { component: IconSystemMode }),
+        key: "system",
+        label: t("SystemColor"),
+      },
     ],
   },
 ]));
@@ -63,6 +70,12 @@ function onSelect(option: string) {
       break;
     case "dark":
       context.updateThemeMode("dark");
+      break;
+    case "system":
+      if (preferredColor.value !== "no-preference") {
+        context.updateThemeMode(preferredColor.value === "dark" ? "dark" : "light");
+      }
+
       break;
   }
 }

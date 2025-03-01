@@ -11,8 +11,7 @@
     "moduleResolution": "Bundler",
     "paths": {
       "~/*": ["./src/*"],
-      "package": ["./package.json"],
-      "changelog": ["./CHANGELOG.md"]
+      "package": ["./package.json"]
     },
     "resolveJsonModule": true,
     "types": [

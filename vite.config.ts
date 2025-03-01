@@ -1,4 +1,4 @@
-import { resolve } from "node:path";
+import { fileURLToPath, URL } from "node:url";
 import Vue from "@vitejs/plugin-vue";
 import UnoCSS from "unocss/vite";
 import Icons from "unplugin-icons/vite";
@@ -28,9 +28,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "~": resolve(__dirname, "./src"),
-      "changelog": resolve(__dirname, "./CHANGELOG.md"),
-      "package": resolve(__dirname, "./package.json"),
+      "~": fileURLToPath(new URL("./src", import.meta.url)),
+      "package": fileURLToPath(new URL("./package.json", import.meta.url)),
     },
   },
   optimizeDeps: {

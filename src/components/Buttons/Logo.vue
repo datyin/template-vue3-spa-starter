@@ -24,7 +24,7 @@ const tooltipProps: TooltipProps = {
       <img :src="context.logo" class="h-18px w-18px border-none" loading="lazy">
     </template>
 
-    <NPerformantEllipsis class="text-initial font-500 line-height-relaxed !max-w-200px" :tooltip="tooltipProps">
+    <NPerformantEllipsis class="text-unset font-500 line-height-relaxed !max-w-200px" :tooltip="tooltipProps">
       {{ context.siteName }}
     </NPerformantEllipsis>
   </RouterButton>

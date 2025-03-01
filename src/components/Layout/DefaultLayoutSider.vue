@@ -3,8 +3,8 @@ import type { MenuOption } from "naive-ui";
 import { NIcon, NLayoutSider, NMenu } from "naive-ui";
 import { computed, h } from "vue";
 import { RouterLink } from "vue-router";
-import { IconChangelog, IconHome } from "~/icons";
-import { t } from "~/plugins/i18n";
+import { IconChangelog, IconHome } from "~/icons/index.ts";
+import { t } from "~/plugins/i18n.ts";
 
 defineOptions({
   name: "DefaultLayoutSiderComponent",

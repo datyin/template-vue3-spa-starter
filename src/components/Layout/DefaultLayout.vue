@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { NLayout } from "naive-ui";
 import { useContextStore } from "~/stores/context";
+import PageLoader from "../Loading/PageLoader.vue";
 import DefaultLayoutContent from "./DefaultLayoutContent.vue";
 import DefaultLayoutHeader from "./DefaultLayoutHeader.vue";
-import DefaultLayoutLoading from "./DefaultLayoutLoading.vue";
 import DefaultLayoutSider from "./DefaultLayoutSider.vue";
 
 defineOptions({
@@ -16,7 +16,7 @@ const context = useContextStore();
 
 <template>
   <NLayout position="absolute" class="!bottom-0 !top-0">
-    <DefaultLayoutLoading v-if="context.loading" />
+    <PageLoader v-if="context.loading" class="h-full min-h-300px w-full" />
 
     <template v-else>
       <DefaultLayoutHeader />

@@ -20,6 +20,24 @@ The format of the version is:
 
 ## Development
 
+1. Install dependencies
+
+```bash
+pnpm install
+```
+
+2. Run the development server
+
+```bash
+pnpm dev
+```
+
+3. Build the project
+
+```bash
+pnpm build
+```
+
 ### Resources
 
 - [Vue](https://vuejs.org/guide/introduction.html) - Framework

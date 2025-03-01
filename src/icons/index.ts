@@ -6,4 +6,5 @@ export { default as IconDarkMode } from "~icons/lucide/moon?width=24px&height=24
 export { default as IconChangelog } from "~icons/lucide/notepad-text?width=24px&height=24px";
 export { default as IconColors } from "~icons/lucide/palette?width=24px&height=24px";
 export { default as IconSettings } from "~icons/lucide/settings?width=24px&height=24px";
+export { default as IconSystemMode } from "~icons/lucide/sun-moon";
 export { default as IconLightMode } from "~icons/lucide/sun?width=24px&height=24px";
