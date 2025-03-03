@@ -19,7 +19,7 @@ const tooltipProps: TooltipProps = {
 </script>
 
 <template>
-  <RouterButton :to="{ name: 'LandingPage' }" :button-props="{ quaternary: true }">
+  <RouterButton :to="{ name: 'LandingPage' }" :button-props="{ text: true, quaternary: true }">
     <template #icon>
       <img :src="context.logo" class="h-18px w-18px border-none" loading="lazy">
     </template>
