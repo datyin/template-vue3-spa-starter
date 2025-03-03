@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ConfigProviderProps, DialogProviderProps, LoadingBarProviderProps, MessageProviderProps, ModalProviderProps } from "naive-ui";
 import type { Ref } from "vue";
-import { NConfigProvider, NDialogProvider, NLoadingBarProvider, NMessageProvider, NModalProvider } from "naive-ui";
+import { NConfigProvider, NDialogProvider, NGlobalStyle, NLoadingBarProvider, NMessageProvider, NModalProvider } from "naive-ui";
 import { onMounted, onUnmounted } from "vue";
 import { defineNaiveUI, disposeNaiveUI } from "../modules/ui";
 
@@ -43,5 +43,7 @@ onUnmounted(() => {
         </NDialogProvider>
       </NMessageProvider>
     </NLoadingBarProvider>
+
+    <NGlobalStyle />
   </NConfigProvider>
 </template>

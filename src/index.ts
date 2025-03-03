@@ -4,7 +4,6 @@ import { i18n } from "./plugins/i18n";
 import { pinia } from "./plugins/pinia.ts";
 import { router } from "./plugins/router.ts";
 import "virtual:uno.css";
-import "@unocss/reset/normalize.css";
 
 const app = createApp(App);
 app.use(i18n);

@@ -34,6 +34,6 @@ const BUILD_TIME = formatDate(new Date(import.meta.env.VITE_BUILD_DATE), "YYYY-M
       </NFlex>
     </template>
 
-    <Changelog />
+    <Changelog class="font-mono" />
   </PageCard>
 </template>

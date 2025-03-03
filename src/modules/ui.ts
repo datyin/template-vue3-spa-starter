@@ -4,6 +4,7 @@ import type { NaiveDiscreteApiModules, NaiveUIProps } from "~/modules/ui.definit
 import { createDiscreteApi, darkTheme, dateDeDE, dateEnUS, deDE, enUS, lightTheme } from "naive-ui";
 import { reactive } from "vue";
 import { getLanguage, getThemeMode } from "~/stores/context.ts";
+import { themeOverrides } from "~/theme/shared.ts";
 import { log } from "~/utils/logger.ts";
 
 const NAMESPACE = "NaiveUI Utils";
@@ -17,6 +18,7 @@ export const naiveConfig = reactive<NaiveUIProps>({
     locale: language ? deDE : enUS,
     dateLocale: language ? dateDeDE : dateEnUS,
     theme: theme === "dark" ? darkTheme : lightTheme,
+    themeOverrides,
   },
   loadingBar: undefined,
   message: {
