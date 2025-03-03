@@ -16,9 +16,8 @@ export default defineConfig({
     presetWebFonts({
       provider: "google",
       fonts: {
-        "sans": "Poppins",
-        "mono": "DM Mono",
-        "dm-mono": "DM Mono",
+        sans: "Inter",
+        mono: "DM Mono",
       },
       processors: createLocalFontProcessor({
         fontAssetsDir: fileURLToPath(new URL("./public/fonts", import.meta.url)),

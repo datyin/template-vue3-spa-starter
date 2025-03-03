@@ -41,4 +41,9 @@ onMounted(bootstrap);
 .fade-leave-to {
   opacity: 0;
 }
+
+.markdown-body,
+.markdown-body code {
+  --at-apply: font-mono;
+}
 </style>
